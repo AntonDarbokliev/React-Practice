@@ -1,0 +1,23 @@
+@import '../../style-propreties.scss';
+
+.main-navigation__ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.main-navigation__li {
+    color: $main-color-text;
+    margin: 0 10vw;
+
+    &:hover {
+        color: darken($main-color-text,  50%);
+        cursor: pointer;
+    }
+}
+
+.main-navigation{
+    background-color: $main-color;
+    padding: 0.5rem;
+}
