@@ -1,0 +1,14 @@
+[
+    {
+        "name" : "Coat",
+        "price": 59.99,
+        "images" : [
+            "https://fdcdn.akamaized.net/m/780x1170/products/63998/63997196/images/res_557bc43254f4950fb9beb65fda00008c.jpg?s=OlbfPnl9KlJn",
+            "https://fdcdn.akamaized.net/m/780x1170/products/63998/63997196/images/res_0476cf6331e3290b808e5bace77bfc61.jpg?s=lxcAyw9X3FWp",
+            "https://fdcdn.akamaized.net/m/780x1170/products/63998/63997196/images/res_e47df5e27c523b6a178c24c0814d84ec.jpg?s=Rv4Qs0w56nHa"
+        ],
+        "materials" : ["synthetic", "wool"],
+        "type": "coat"
+
+    }
+]
