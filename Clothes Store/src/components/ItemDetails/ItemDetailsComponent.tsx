@@ -66,7 +66,7 @@ export const ItemDetails = () => {
                 })}
             </div>
             <h2>${item?.price}</h2>
-            <Button onClick={() => {
+            {!isInCart && <Button onClick={() => {
                 if(item){
                     if(!isInCart){
                         addToCart(item)
@@ -74,7 +74,10 @@ export const ItemDetails = () => {
                         setCartItems(state => [...state,item])
                     }
                 }
-            } } text="Add to Cart" ></Button>
+            } } text="Add to Cart" ></Button> }
+
+            {isInCart && <Button text="Already In Cart" ></Button>}
+            
         </div>
         <div className={`images-slide ${styles['images-slide']}`}>
             {item?.images.map(image => {

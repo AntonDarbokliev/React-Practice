@@ -29,7 +29,7 @@ export const Navigation = () => {
                 <Link to={'/cart'}>
                 <img className={styles['cart']} src={cartIcon} alt="" />
                 </Link>
-                <p>{totalItems}</p>
+                <p className={styles['number-items']}>{totalItems}</p>
             </ul>
         </nav>
         </>
