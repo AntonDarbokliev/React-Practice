@@ -1,0 +1,25 @@
+.image-slide {
+    display: none;
+    width:30vw
+}
+
+.images-slide{
+    display:flex;
+    justify-content: center;
+    position: relative;
+    right: 10rem;
+}
+
+.info {
+    display: flex ;
+    flex-direction: column;
+    position: relative;
+    left: 10rem;
+}
+
+.item-details {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    padding: 3rem;
+}
