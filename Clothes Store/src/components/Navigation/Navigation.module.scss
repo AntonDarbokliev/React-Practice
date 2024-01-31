@@ -8,8 +8,12 @@
 }
 
 .main-navigation__li {
-    color: $main-color-text;
     margin: 0 10vw;
+    
+    a {
+        text-decoration: none;
+        color: $main-color-text;
+    }
 
     &:hover {
         color: darken($main-color-text,  50%);

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './Navigation.module.scss'
 
 export const Navigation = () => {
@@ -6,13 +7,13 @@ export const Navigation = () => {
         <nav className={styles['main-navigation']}>
             <ul className={styles['main-navigation__ul']}>
                 <li className={styles["main-navigation__li"]}>
-                    Home
+                   <Link to="/">Home</Link> 
                 </li>
                 <li className={styles["main-navigation__li"]}>
-                    Favourites
+                <Link to="/favourites">Favourites</Link>
                 </li>
                 <li className={styles["main-navigation__li"]}>
-                    About
+                <Link to="/about">About</Link>
                 </li>
             </ul>
         </nav>

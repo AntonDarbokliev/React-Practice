@@ -1,6 +1,7 @@
 [
     {
-        "name" : "Coat",
+        "_id" : 1,
+        "name" : "Mango Coat",
         "price": 59.99,
         "images" : [
             "https://fdcdn.akamaized.net/m/780x1170/products/63998/63997196/images/res_557bc43254f4950fb9beb65fda00008c.jpg?s=OlbfPnl9KlJn",
