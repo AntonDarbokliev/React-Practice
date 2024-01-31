@@ -2,7 +2,17 @@ import { Link } from 'react-router-dom'
 import styles from './Navigation.module.scss'
 
 import cartIcon from '../../assets/output-onlinepngtools.png'
+import { useContext, useEffect, useState } from 'react'
+import { CartContext } from '../../contexts/cart'
+
 export const Navigation = () => {
+    const {cartItems} = useContext(CartContext)
+    const [totalItems, setTotalItems] = useState(cartItems.length)
+
+    useEffect(() => {
+        setTotalItems(cartItems.length)
+    },[cartItems])
+
     return (
         <>
         <nav className={styles['main-navigation']}>
@@ -19,6 +29,7 @@ export const Navigation = () => {
                 <Link to={'/cart'}>
                 <img className={styles['cart']} src={cartIcon} alt="" />
                 </Link>
+                <p>{totalItems}</p>
             </ul>
         </nav>
         </>

@@ -5,10 +5,12 @@ import { Item } from "../../types/item"
 import styles from './ItemDetails.module.scss'
 import { Button } from "../Shared/Button"
 import { IsInCart, addToCart } from "../utils/cartUtil"
+import { CartContext } from "../../contexts/cart"
 
 
 export const ItemDetails = () => {
-    
+    const {setCartItems} = useContext(CartContext)
+
     const [item, setItem ] = useState<Item>()
     const [imageSlide, setImageSlide] = useState(0)
     const [isInCart,setIsInCart ] = useState(false)
@@ -69,6 +71,7 @@ export const ItemDetails = () => {
                     if(!isInCart){
                         addToCart(item)
                         setIsInCart(true)
+                        setCartItems(state => [...state,item])
                     }
                 }
             } } text="Add to Cart" ></Button>
