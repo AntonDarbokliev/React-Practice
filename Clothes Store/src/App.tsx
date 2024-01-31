@@ -3,6 +3,7 @@ import { ItemsContextProvider } from "./contexts/items";
 import { Home } from "./components/Home/HomeComponent";
 import { ItemDetails } from "./components/ItemDetails/ItemDetailsComponent";
 import { Layout } from "./components/Layout/LayoutComponent";
+import { CartContextProvider } from "./contexts/cart";
 
 
 const router = createBrowserRouter([
@@ -25,12 +26,16 @@ const router = createBrowserRouter([
     
 ]);
 
+
+
 function App() {
     return (
         <>
-            <ItemsContextProvider>
-                <RouterProvider router={router} />
-            </ItemsContextProvider>
+            <CartContextProvider>
+                <ItemsContextProvider>
+                    <RouterProvider router={router} />
+                </ItemsContextProvider>
+            </CartContextProvider>
         </>
     );
 }

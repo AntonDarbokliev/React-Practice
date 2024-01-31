@@ -4,12 +4,14 @@ import { ItemsContext } from "../../contexts/items"
 import { Item } from "../../types/item"
 import styles from './ItemDetails.module.scss'
 import { Button } from "../Shared/Button"
+import { IsInCart, addToCart } from "../utils/cartUtil"
 
 
 export const ItemDetails = () => {
     
     const [item, setItem ] = useState<Item>()
     const [imageSlide, setImageSlide] = useState(0)
+    const [isInCart,setIsInCart ] = useState(false)
     const urlParams = useParams()
     const { getItems } = useContext(ItemsContext) 
 
@@ -17,7 +19,6 @@ export const ItemDetails = () => {
         const currentItems = getItems().find(x => x._id === Number(urlParams.itemId))
         setItem(currentItems)
     },[getItems,urlParams.itemId])
-
 
     const showImage =  useCallback(() => {
         const div = document.querySelector('.images-slide')
@@ -34,6 +35,9 @@ export const ItemDetails = () => {
 
     useEffect(() => {
         showImage()
+        if(item){
+            setIsInCart(IsInCart(item))
+        }
     },[showImage,item])
     
     
@@ -60,7 +64,14 @@ export const ItemDetails = () => {
                 })}
             </div>
             <h2>${item?.price}</h2>
-            <Button text="Add to Cart" ></Button>
+            <Button onClick={() => {
+                if(item){
+                    if(!isInCart){
+                        addToCart(item)
+                        setIsInCart(true)
+                    }
+                }
+            } } text="Add to Cart" ></Button>
         </div>
         <div className={`images-slide ${styles['images-slide']}`}>
             {item?.images.map(image => {
@@ -69,9 +80,11 @@ export const ItemDetails = () => {
                     )
                 })}
         </div>
+   <div className={styles["buttons"]}>
+        <button className={`${styles["button"]}`} disabled={imageSlide <= 0} onClick={() => changeImage('previous')}>&lt;</button>
+        <button className={`${styles["button"]} `}disabled={imageSlide >= (item?.images.length ?? 3) - 1} onClick={() => changeImage('next')}>&gt;</button>
    </div>
-        <button disabled={imageSlide <= 0} onClick={() => changeImage('previous')}>previous</button>
-        <button disabled={imageSlide >= (item?.images.length ?? 3) - 1} onClick={() => changeImage('next')}>next</button>
+   </div>
     </>
     
     )

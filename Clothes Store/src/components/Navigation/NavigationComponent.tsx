@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import styles from './Navigation.module.scss'
 
+import cartIcon from '../../assets/output-onlinepngtools.png'
 export const Navigation = () => {
     return (
         <>
@@ -15,6 +16,9 @@ export const Navigation = () => {
                 <li className={styles["main-navigation__li"]}>
                 <Link to="/about">About</Link>
                 </li>
+                <Link to={'/cart'}>
+                <img className={styles['cart']} src={cartIcon} alt="" />
+                </Link>
             </ul>
         </nav>
         </>
