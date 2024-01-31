@@ -9,7 +9,20 @@
             "https://fdcdn.akamaized.net/m/780x1170/products/63998/63997196/images/res_e47df5e27c523b6a178c24c0814d84ec.jpg?s=Rv4Qs0w56nHa"
         ],
         "materials" : ["synthetic", "wool"],
-        "type": "coat"
+        "type": "Coat"
+
+    },
+    {
+        "_id" : 2,
+        "name" : "KOTON",
+        "price": 39.99,
+        "images" : [
+            "https://fdcdn.akamaized.net/m/780x1170/products/64152/64151415/images/res_533ad0f0925efd5f4a25e378298e08a2.jpg?s=7TTM2imWpdHC",
+            "https://fdcdn.akamaized.net/m/780x1170/products/64152/64151415/images/res_f83bb38854b49720e9101ac32ca6b3cc.jpg?s=FUz_cbmjGXPj",
+            "https://fdcdn.akamaized.net/m/780x1170/products/64152/64151415/images/res_6dc1cae6b17322c287585c9f6565cb51.jpg?s=t9cJCMxCJ2xJ"
+        ],
+        "materials" : ["eco leather", "eco wool"],
+        "type": "Jacket"
 
     }
 ]

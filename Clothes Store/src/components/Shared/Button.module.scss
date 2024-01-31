@@ -1,0 +1,14 @@
+@import '../../style-propreties.scss';
+
+.button {
+    background: $main-color ;
+    border: none;
+    border-radius: $main-border-radius;
+    padding: 1rem;
+    color: $main-color-text;
+
+    &:hover {
+        color: darken( $main-color, 50%);
+        cursor: pointer;
+    }
+}

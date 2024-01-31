@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { ItemsContext } from "../../contexts/items"
 import { Item } from "../../types/item"
 import styles from './ItemDetails.module.scss'
+import { Button } from "../Shared/Button"
 
 
 export const ItemDetails = () => {
@@ -55,12 +56,11 @@ export const ItemDetails = () => {
             <h4>{item?.type}</h4>
             <div className="materials">
                 {item?.materials.map(material => {
-                    return <p>-{material}</p>
+                    return <p key={material}>-{material}</p>
                 })}
             </div>
             <h2>${item?.price}</h2>
-            
-            {/* <button>Add to Cart</button> */}
+            <Button text="Add to Cart" ></Button>
         </div>
         <div className={`images-slide ${styles['images-slide']}`}>
             {item?.images.map(image => {
